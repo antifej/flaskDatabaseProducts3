@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find meaning of any word</title>
+</head>
+<body>
+<h1 align="center">English dictionary!</h1>
+<hr>
+<h2>Enter any word to get definition</h2>
+
+<form method="post">
+    <input type="text" name="word" required > <br>
+    <button type="submit">Get definition</button>
+</form>
+{% if data != "" %}
+    <h3>Definition found</h3>
+    <br>
+{% if data['Audio'] != "" %}
+    <audio controls=""><source src="{{data['Audio']}}" type="audio/mpeg"></audio>
+    {% else %}
+
+    <h4>No audio</h4>
+
+    {% endif %}
+
+    {% for oneDefinition in data['DefinitionArray'] %}
+        <h4>{{oneDefinition}}</h4>
+
+    {% endfor %}
+
+{% else %}
+
+
+{% endif %}
+
+</body>
+</html>

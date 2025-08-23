@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta charset="UTF-8">
+    <title>Log In page</title>
+</head>
+<body>
+<h1 align="center">Log in To Product Page</h1>
+<hr>
+
+<center>
+    {% if data !="" %}
+        {% if 'WRONG' in data %}
+        <h2 class="wrong">{{data}}</h2>
+
+        {% elif 'USER' in data %}
+        <h2 class="user">{{data}}</h2>
+
+        {% elif 'ADMIN' in data %}
+        <h2 class="admin">{{data}}</h2>
+
+
+        {% endif %}
+
+
+
+    {% endif %}
+<form method="post">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="password" name="password"><br>
+    <button type="submit">Log In</button>
+</form>
+    <a href="/register"><button>Register</button></a>
+    <hr>
+    <a href="/"><button>Go Back!</button></a>
+</center>
+
+
+</body>
+</html>

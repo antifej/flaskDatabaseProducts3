@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Cars 🚘</title>
+</head>
+<body>
+<h1 align="center"> All Cars !</h1>
+<hr>
+
+<table align="center" border="1px" cellspacing="0px" width="700px">
+    <tr align="center">
+        <td>ID</td>
+        <td>MODEL</td>
+        <td>PRICE</td>
+        <td>IS NEW</td>
+    </tr>
+     {%for oneRow in carData %}
+    <tr>
+      {%for oneWord in oneRow %}
+        <td>{{oneWord}}</td>
+
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+<a href="/"><button>Go back!</button></a>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta charset="UTF-8">
+    <title>Register </title>
+</head>
+<body>
+<h1 align="center">Register new User to database</h1>
+<hr>
+    {%  if "added" in message  %}
+    <h2 class="user">{{message}}</h2>
+    {% elif "MATCH" in message or"Failed" in message %}
+    <h2 class="wrong">{{message}}</h2>
+
+    {% endif %}
+
+    <form method="post">
+        Username: <input type="text" name="username" required> <br>
+        Password: <input type="password" name="password" required> <br>
+        Confirm password: <input type="password" name="cfpassword" required> <br>
+        IsAdmin: <input type="checkbox" name="isAdmin"><br>
+
+        <button>Register new User</button>
+    </form>
+
+
+</body>
+</html>
