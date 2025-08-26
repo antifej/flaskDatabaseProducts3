@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Fruits Table</title>
+</head>
+<body>
+<h1 align="center">All Fruit Table</h1>
+<hr>
+
+<table align="center" border="1px" cellspacing="0px" width=400px">
+    <tr align="center">
+        <td>ID</td>
+        <td>NAME</td>
+        <td>Button</td>
+    </tr>
+    {%for oneRow in fruitData %}
+    <tr>
+      <td>{{oneRow.id}}</td>
+        <td>{{oneRow.name}}</td>
+
+        <td><a href="/fruit/{{oneRow.id}}"><Button>Open</Button></a></td>
+    </tr>
+    {% endfor %}
+
+    </table>
+<a href="/"><button>Go back!</button></a>
+</body>
+</html>

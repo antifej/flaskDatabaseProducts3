@@ -5,6 +5,7 @@ from flask import request
 from flask import redirect
 from ApiCats1 import getRandomCatURL
 from APIDictionary import getDefinition
+from APIFruits import getRandomFruitURL
 
 webPage = Flask(__name__)
 
@@ -149,7 +150,14 @@ def logIn():
 
     return render_template("log_in.html", data =data)
 
+@webPage.route("/all_fruits", methods=["POST", "GET"])
+def all_fruits():
+    fruitData = getRandomFruitURL()
+    return render_template("all_fruits.html", fruitData=fruitData)
 
+@webPage.route("/fruit/<int:id>", methods=['POST', 'GET'])
+def oneFruit(id):
+    return render_template("fruit.html" )
 
 
 
